@@ -29,7 +29,4 @@ public class Employee {
 
     @Column(name = "occupation", length = 50, nullable = false)
     private String occupation;
-
-    @OneToOne(mappedBy = "employee")
-    private Policies policies;
 }

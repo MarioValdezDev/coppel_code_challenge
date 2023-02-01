@@ -1,7 +1,8 @@
 package mx.mariovaldez.codechallenge.polizascoppel.service;
 
-import mx.mariovaldez.codechallenge.polizascoppel.model.entity.Policies;
-import mx.mariovaldez.codechallenge.polizascoppel.model.request.SavePoliceRequest;
+import mx.mariovaldez.codechallenge.polizascoppel.model.request.SavePolicyRequest;
+import mx.mariovaldez.codechallenge.polizascoppel.model.request.UpdatePolicyRequest;
+import mx.mariovaldez.codechallenge.polizascoppel.model.response.DataSuccess;
 import mx.mariovaldez.codechallenge.polizascoppel.model.response.ResponseSuccess;
 import mx.mariovaldez.codechallenge.polizascoppel.policies.domain.usercase.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,37 +14,37 @@ import java.util.List;
 
 @Transactional
 @Service
-public class PoliceService {
+public class PolicyService {
 
     @Autowired
-    FindPoliceById findPoliceById;
+    FindPolicyById findPoliceById;
 
     @Autowired
     FindAllPolicies findAllPolicies;
 
     @Autowired
-    SavePolice savePolice;
+    SavePolicy savePolice;
 
     @Autowired
-    UpdatePolice updatePolice;
+    UpdatePolicy updatePolice;
 
     @Autowired
-    DeleteById deleteById;
+    DeletePolicyById deleteById;
 
-    public List<Policies> getPolicies() {
+    public List<DataSuccess> getPolicies() {
         return findAllPolicies.getAllPolicies();
     }
 
-    public ResponseSuccess getPolicie(String id) {
+    public ResponseSuccess getPolicy(String id) {
         return findPoliceById.getPolicie(id);
     }
 
-    public ResponseSuccess savePolice(SavePoliceRequest savePolizaRequest) {
-        return savePolice.savePolice(savePolizaRequest);
+    public ResponseSuccess savePolicy(SavePolicyRequest savePolizaRequest) {
+        return savePolice.savePolicy(savePolizaRequest);
     }
 
-    public ResponseSuccess updatePolice(SavePoliceRequest savePolizaRequest) {
-        return updatePolice.updatePolice(savePolizaRequest);
+    public ResponseSuccess updatePolicy(UpdatePolicyRequest updatePolicyRequest) {
+        return updatePolice.updatePolice(updatePolicyRequest);
     }
 
     public Object delete(String idPolice) {

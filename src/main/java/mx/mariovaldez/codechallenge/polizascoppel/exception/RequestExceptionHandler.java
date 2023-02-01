@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class RequestExceptionHandler {
 
     @ExceptionHandler(value = RequestException.class)
-    ResponseEntity<Object> handleResponseRequestException(RequestException e) {
+    ResponseEntity<ResponseFailure> handleResponseRequestException(RequestException e) {
         ResponseFailure responseFailure = ResponseFailure.builder()
                 .meta(new Meta("FAILURE"))
                 .data(new DataFailure(e.getMessage())).build();

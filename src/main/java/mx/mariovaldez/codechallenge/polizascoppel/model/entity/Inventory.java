@@ -26,7 +26,4 @@ public class Inventory {
     @Column(name = "quantity", nullable = false)
     private int quantity;
 
-    @OneToOne(mappedBy = "inventory")
-    private Policies policies;
-
 }
