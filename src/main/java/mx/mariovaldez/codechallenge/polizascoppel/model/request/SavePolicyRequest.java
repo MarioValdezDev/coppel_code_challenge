@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class SavePoliceRequest {
+public class SavePolicyRequest {
 
-    private String idPolice;
+    private String idPolicy;
     private String date;
     private Integer quatity;
     private String sku;

@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DeleteById {
+public class DeletePolicyById {
 
     @Autowired
-    PoliceRepository policeRepository;
+    PoliceRepository policyRepository;
 
     public Object delete(String idPolice) {
-        return policeRepository.deleteByidPolice(idPolice);
+        return policyRepository.deleteByidPolice(idPolice);
     }
 }

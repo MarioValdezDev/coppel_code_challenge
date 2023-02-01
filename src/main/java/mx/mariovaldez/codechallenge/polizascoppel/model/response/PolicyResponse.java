@@ -7,9 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PoliceResponse {
+public class PolicyResponse {
 
-    private String idPolice;
+    private String idPolicy;
     private Integer quantity;
 
 }
