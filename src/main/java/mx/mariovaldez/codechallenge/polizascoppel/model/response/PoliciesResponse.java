@@ -2,16 +2,15 @@ package mx.mariovaldez.codechallenge.polizascoppel.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
+import java.util.List;
+
+@lombok.Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class DataSuccess {
+public class PoliciesResponse {
 
-    private PolicyResponse policy;
-    private EmployeeResponse employee;
-    private ArticleDetailResponse articleDetail;
+    private List<DataSuccess> data;
 }

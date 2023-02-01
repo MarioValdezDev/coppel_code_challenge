@@ -1,5 +1,6 @@
 package mx.mariovaldez.codechallenge.polizascoppel.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,12 +21,14 @@ public class Policies {
     @Column(name = "idPolice", length = 50, nullable = false, unique = true)
     private String idPolice;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne()
     @JoinColumn(name = "idEmployee")
+    @JsonBackReference
     private Employee employee;
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne()
     @JoinColumn(name = "SKU")
+    @JsonBackReference
     private Inventory inventory;
 
     @Column(name = "quantity", length = 50, nullable = false)

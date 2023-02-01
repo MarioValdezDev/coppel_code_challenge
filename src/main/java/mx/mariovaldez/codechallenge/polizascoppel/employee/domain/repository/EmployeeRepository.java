@@ -1,4 +1,4 @@
-package mx.mariovaldez.codechallenge.polizascoppel.inventory.domain.repository;
+package mx.mariovaldez.codechallenge.polizascoppel.employee.domain.repository;
 
 import mx.mariovaldez.codechallenge.polizascoppel.model.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
