@@ -34,9 +34,9 @@ public class SavePolicy {
         Policies policie = Policies.builder()
                 .idPolice(savePoliceRequest.getIdPolicy())
                 .employee(employeeRepository.findByidEmployee(savePoliceRequest.getIdEmployee()))
-                .inventory(decreaseQuantity.decreaseInventory(inventory,savePoliceRequest.getQuatity()))
+                .inventory(decreaseQuantity.decreaseInventory(inventory,savePoliceRequest.getQuantity()))
                 .date(savePoliceRequest.getDate())
-                .quantity(savePoliceRequest.getQuatity())
+                .quantity(savePoliceRequest.getQuantity())
                 .build();
         return mapper.map(policyRepository.save(policie));
     }
