@@ -8,12 +8,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Polizas-Coppel" />
+        <module name="coppel_code_challenge" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Polizas-Coppel" options="-parameters" />
+      <module name="coppel_code_challenge" options="-parameters" />
     </option>
   </component>
 </project>
