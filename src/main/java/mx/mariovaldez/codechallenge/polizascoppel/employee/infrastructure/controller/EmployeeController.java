@@ -1,5 +1,6 @@
 package mx.mariovaldez.codechallenge.polizascoppel.employee.infrastructure.controller;
 
+import mx.mariovaldez.codechallenge.polizascoppel.exception.RequestException;
 import mx.mariovaldez.codechallenge.polizascoppel.model.entity.Employee;
 import mx.mariovaldez.codechallenge.polizascoppel.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +20,19 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @GetMapping("")
-    public List<Employee> getAllEmployees(){
+    public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
 
     @PostMapping("")
-    public HttpEntity<Employee> saveEmployee(@RequestBody Employee request){
-        return new ResponseEntity<>(employeeService.saveEmployee(request), HttpStatus.OK);
+    public HttpEntity<Employee> saveEmployee(@RequestBody Employee request) {
+        try {
+            if (request.getIdEmployee().isEmpty() || request.getLastName().isEmpty() || request.getName().isEmpty() || request.getOccupation().isEmpty()) {
+                throw new RequestException("Ha ocurrido un error al guardar al empleado");
+            }
+            return new ResponseEntity<>(employeeService.saveEmployee(request), HttpStatus.OK);
+        } catch (Exception e) {
+            throw new RequestException("Ha ocurrido un error al guardar al empleado");
+        }
     }
 }
