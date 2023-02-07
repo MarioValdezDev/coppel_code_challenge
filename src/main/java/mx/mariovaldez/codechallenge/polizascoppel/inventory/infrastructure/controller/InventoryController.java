@@ -33,7 +33,7 @@ public class InventoryController {
             }
             return new ResponseEntity<>(service.saveInventory(request), HttpStatus.OK);
         } catch (Exception e) {
-            throw new RequestException("Ha ocurrido un error en los grabados de póliza.");
+            throw new RequestException("Ha ocurrido un error en los grabados de inventario.");
         }
     }
 
