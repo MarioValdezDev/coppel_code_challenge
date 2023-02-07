@@ -11,7 +11,7 @@ public class SavePolicyRequest {
 
     private String idPolicy;
     private String date;
-    private Integer quatity;
+    private Integer quantity;
     private String sku;
     private String idEmployee;
 

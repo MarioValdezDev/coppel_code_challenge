@@ -45,7 +45,9 @@ public class PolicyController {
         try {
             if (request.getIdPolicy().isEmpty() ||
                     request.getIdEmployee().isEmpty() ||
-                    request.getSku().isEmpty()) {
+                    request.getSku().isEmpty() ||
+                    request.getQuantity() == 0
+            ) {
                 throw new RequestException("Ha ocurrido un error en los grabados de póliza.");
             }
             return new ResponseEntity<>(policyService.savePolicy(request), HttpStatus.OK);
